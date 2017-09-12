@@ -4,25 +4,25 @@ SEOTitle: Luminous | BY LYJ
 header-img: img/mountain_real.jpg
 email: 692885364@qq.com
 description: "Every failure is leading towards success."
-keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone"
+keyword: "LYJ, Loating, 刘源杰的博客, 刘源杰, liuyuanjie, python, deeplearning, english"
 url: "http://idiotLeoLYJ.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/idiotLeoLYJ/idiotLeoLYJ.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "沉着-勇猛-有辨别-不自私"
+sidebar-avatar: /img/tx_real.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
-github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
+weibo_username:     5876113597?refer_flag=1001030201_
+#zhihu_username:     qiubaiying
+github_username:    idiotLeoLYJ
+#facebook_username:  baiying.qiu.7
+#jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
 
 
@@ -81,7 +81,7 @@ kramdown:
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 
 
@@ -94,16 +94,13 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+        title: "@刻骨君Leslie",
+        href: "http://weibo.com/u/1894951630?refer_flag=1005055013_"
     },{
         title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
+        href: "http://www.jianshu.com"
     },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "Github",
+        href: "https://github.com"
     }
 ]
