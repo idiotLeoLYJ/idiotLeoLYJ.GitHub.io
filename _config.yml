@@ -11,7 +11,7 @@ github_repo: "https://github.com/idiotLeoLYJ/idiotLeoLYJ.github.io.git" # you co
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "沉着-勇猛-有辨别-不自私"
+sidebar-about-description: "Wake me up when september ends"
 sidebar-avatar: /img/tx_real.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
