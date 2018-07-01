@@ -55,5 +55,27 @@ THU OS Labs based on Ucore!
 <strong>virtualbox</strong> + <strong>配置好的ubuntu x64</strong>[映像云盘地址](https://pan.baidu.com/s/11zjRK) 
 
 下载代码
+` $ git clone https://github.com/chyyuu/ucore_lab.git `
 
-< $ git clone https://github.com/chyyuu/ucore_lab.git
+##### 开发调试的基本工具
+
+<strong>
+    gcc
+    AT&T汇编基本语法
+</strong>
+
+<strong>gcc基本用法</strong>：
+
+`$ gcc -Wall hello.c -o hello`
+
+hello.c为文件名，hello为可执行文件名。
+注：选项 -Wall 开启编译器几乎所有常用的警告──强烈建议你始终使用该选项。编译器有很多其他的警告选项，但 -Wall 是最常用的。默认情况下GCC 不会产生任何警告信息。当编写 C 或 C++ 程序时编译器警告非常有助于检测程序存在的问题。
+
+`$ ./hello
+Hello, world!`
+
+<strong>AT&T汇编基本语法</strong>：
+
+![](http://ow7qvf5zp.bkt.clouddn.com/WT0EH%5DM5TY7Z6%603HWA5MS~L.png)
+![](http://ow7qvf5zp.bkt.clouddn.com/M530V@PV%25~Y$2%25__YN%7DD42H.png)
+
