@@ -16,7 +16,9 @@ tags:
 # OS_Ucore
 
 THU OS Labs based on Ucore!
+
 陈渝老师维护的github[网址](https://github.com/chyyuu/os_course_info)
+
 详细的操作系统实验[指导手册](https://chyyuu.gitbooks.io/ucore_os_docs/content/)
 
 ### Lab 0 : 实验准备以及环境搭建
