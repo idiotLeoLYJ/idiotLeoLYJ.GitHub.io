@@ -48,3 +48,11 @@ THU OS Labs based on Ucore!
 其中每个开发步骤都是建立在上一个步骤之上的，就像搭积木，从一个一个小木块，最终搭出来一个小房子。在搭房子的过程中，完成从理解操作系统原理到实践操作系统设计与实现的探索过程。
 
 ![](http://ow7qvf5zp.bkt.clouddn.com/image001.png)
+
+
+##### 实验环境
+
+<strong>virtualbox</strong> + <strong>配置好的ubuntu x64</strong>[映像云盘地址](https://pan.baidu.com/s/11zjRK) 
+
+下载代码
+< $ git clone https://github.com/chyyuu/ucore_lab.git
