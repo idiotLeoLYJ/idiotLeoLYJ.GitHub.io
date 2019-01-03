@@ -19,7 +19,7 @@ tags:
 
 ##### main()
 
-step 1、对词法分析文件asmlex.l进行提取（seuLex）
+**step 1、对词法分析文件asmlex.l进行提取（analysis）**
 
 ifile.open(asmlex.l)
 
@@ -43,5 +43,25 @@ Re[l]=re;（string Re[42];）
 
 Analysis Done！！
 
-Step2、将正则表达式转换到NFA
+**Step2、将正则表达式转换到NFA**
+
+sub_nfa final;  final=re2nfa(Re[i]);
+
+相关数据结构：
+
+struct sub_nfa:1、edge  EdgeSet[MAX];2、unsigned int EdgeCount;3、unsigned int StartState;4、unsigned int EndState;
+
+struct edge：1、unsigned int value;//边上标识符；unsigned int from;//边起始状态；3、unsigned int to;//边终止状态；
+
+这里是对re进行转化到nfa，具体转化方法为利用之前的.号间隔，使用一个辅助栈status（用来记录当前状态的前驱后驱问题），对.* l几种符号进行不同的选择处理。将得到的nfa存储在nfa数据结构中。
+
+final=re2nfa(Re[i]);这个是得到某一条re的各种状态以及转换状态，之后再在produceNfa中进行转化从开始一直到终态获得NFA；
+
+这里面就涉及到一个对re转化nfa图的分支处理（？？）
+
+produceNfa就是把得到的各状态情况从startstate一直串联到endstate，最后再加一个终结态。
+
+
+
+
 
