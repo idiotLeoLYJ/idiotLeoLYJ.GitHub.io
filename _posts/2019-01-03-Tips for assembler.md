@@ -79,10 +79,16 @@ produceActionTable.insert(ap3);这个是将动作存起来；每一项first为si
 
 **Step2、构建PDA**
 
-yacc.createPDA();
+yacc.createPDA();就是之前编译课设的那一部分。暂时跳过；
 
+**Step3、生成LR（1）分析表，并输出到actionTable.txt和GotoTable.txt中**
 
+yacc.createTable();
 
+void SeuYacc::outputLR1Table(){  //将LR1分析表输出到tableYacc.h（ACtionTable和GotoTable）
 
+void SeuYacc::outputAction(){  //将产生式对应的动作输出到actionYacc.h
+
+**Step4、**
 
 
