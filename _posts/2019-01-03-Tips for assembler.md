@@ -93,6 +93,18 @@ void SeuYacc::outputLR1Table(){  //将LR1分析表输出到tableYacc.h（ACtionT
 
 void SeuYacc::outputAction(){  //将产生式对应的动作输出到actionYacc.h
 
-**Step4、**
+**Step4、对汇编代码进行lexparse**
 
+就是把汇编代码每一个组件放出来，变成一个个token，token记录行啊，单词类型啊（attribute），本身是什么啊（lexcal）什么的
+
+**Step5、reduceYacc(*T)将规约序列输出到resultSeq.txt文件中**
+
+这里面initTable是得到lr1分析表的映射即为每个状态一个ap集合，通过-1，1，2来判断进行何种操作
+
+再规约时候产生perform。产生动作
+
+涉及一个错误处理问题，目前尚不懂。
+
+
+还需处理的一些问题：1、一些关键点的规约等； 2、各个如何连接起来的 3、报错是在哪里
 
