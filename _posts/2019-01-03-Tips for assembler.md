@@ -61,6 +61,27 @@ final=re2nfa(Re[i]);这个是得到某一条re的各种状态以及转换状态�
 
 produceNfa就是把得到的各状态情况从startstate一直串联到endstate，最后再加一个终结态。
 
+### SeuAssembly.sln
+
+**Step1、构建pda，生成lr1**
+
+Item里面存的生成式
+
+ap3里面，first存的序号，second寸的{}这种对应动作
+
+terminal里存的是所有终结符，pair类型，first 是什么；second 序号。Noterminal也一样。
+
+还不知道hpset是干什么的
+
+produceActionTable.insert(ap3);这个是将动作存起来；每一项first为size；second为具体动作；
+
+之后到translateAction（）中
+
+**Step2、构建PDA**
+
+yacc.createPDA();
+
+
 
 
 
