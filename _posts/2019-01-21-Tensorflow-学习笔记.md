@@ -17,8 +17,6 @@ tags:
 
 # Tensorflow的原理以及进阶
 
-### Tensorflow的基本模型
-
 数据模型--Tensor（张量）   计算模型--Graph（图）   运行模型--Session（会话）
 
 ##### Tensor（与numpy里Ndarray很像）
@@ -57,3 +55,18 @@ Tensorflow程序流程：1、定义**计算图**结构；2、使用**会话**执
 
 两种方法创建和关闭Session：一种直接建立sess，第二种用with tf.Session() as sess:(第二种方法不需要像第一种一样需要显式的关闭sess.close()这样)
 
+# 可视化利器 TensorBoard
+
+##### 1、用tensorflow保存图的信息到日志中
+
+tf.summary.FileWritter("日志保存路径",sess.graph)
+
+summary（总结、概览）  用于导出关于模型的精简信息的方法，可以使用tensorboard等工具访问这些信息
+
+name_scope（命名空间）  类似namespace，包含/嵌套的关系，其含义主要为：
+
+##### 2、用rensorBoard读取并展示日志
+
+tensorboard --logdir=日志所在地址
+
+##### 
