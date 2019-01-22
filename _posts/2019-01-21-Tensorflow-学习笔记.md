@@ -65,6 +65,8 @@ summary（总结、概览）  用于导出关于模型的精简信息的方法�
 
 name_scope（命名空间）  类似namespace，包含/嵌套的关系，其含义主要为：
 
+![tensorBoard解释](img/tensorboard.png)
+
 ##### 2、用rensorBoard读取并展示日志
 
 tensorboard --logdir=日志所在地址
