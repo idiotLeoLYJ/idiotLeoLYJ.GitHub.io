@@ -21,14 +21,6 @@ tags:
 
 数据模型--Tensor（张量）   计算模型--Graph（图）   运行模型--Session（会话）
 
-##### 图Graph和会话Session
-
-节点进行操作，节点间的线是tensor流。
-
-sess=tf.Session()，会话。会话运行图。作用：让静态的图动起来。
-
-Tensorflow程序流程：1、定义**计算图**结构；2、使用**会话**执行计算。
-
 ##### Tensor（与numpy里Ndarray很像）
 
 **张量的维度：**0--Scalar 标量； 1--Vector 向量； 2--Matrix 矩阵； 3--3Darray 3维向量；
@@ -50,3 +42,18 @@ SparseTensor（稀疏矩阵） --一种稀疏的tensor，tf.SparseTensor()
 Tensor（"Mul:0",shape=(),dtype=float32） //Mul:0是名字
 
 eg:<tf.Variable 'Variable_3:0' shape=() dtype=int64_ref>
+
+##### 图Graph和会话Session
+
+节点进行操作，节点间的线是tensor流。
+
+sess=tf.Session()，会话。会话运行图。作用：让静态的图动起来。
+
+Tensorflow程序流程：1、定义**计算图**结构；2、使用**会话**执行计算。
+
+**重要理解：定义出来的各种组件用sess.run()来让他跑起来**
+
+为什么没定义graph就可以用sess.run来跑呢？因为有默认的图
+
+两种方法创建和关闭Session：一种直接建立sess，第二种用with tf.Session() as sess:(第二种方法不需要像第一种一样需要显式的关闭sess.close()这样)
+
