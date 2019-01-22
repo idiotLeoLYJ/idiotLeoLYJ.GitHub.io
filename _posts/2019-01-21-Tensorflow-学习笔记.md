@@ -13,13 +13,16 @@ tags:
 
 # Overview
 
+
 这是IdiotLeo在学习慕课网基于Python玩转人工智能最火框架 TensorFlow应用实践时的笔记
 
 # Tensorflow的原理以及进阶
 
+
 数据模型--Tensor（张量）   计算模型--Graph（图）   运行模型--Session（会话）
 
 ##### Tensor（与numpy里Ndarray很像）
+
 
 **张量的维度：**0--Scalar 标量； 1--Vector 向量； 2--Matrix 矩阵； 3--3Darray 3维向量；
 
@@ -43,6 +46,7 @@ eg:<tf.Variable 'Variable_3:0' shape=() dtype=int64_ref>
 
 ##### 图Graph和会话Session
 
+
 节点进行操作，节点间的线是tensor流。
 
 sess=tf.Session()，会话。会话运行图。作用：让静态的图动起来。
@@ -59,6 +63,7 @@ Tensorflow程序流程：1、定义**计算图**结构；2、使用**会话**执
 
 ##### 1、用tensorflow保存图的信息到日志中
 
+
 tf.summary.FileWritter("日志保存路径",sess.graph)
 
 summary（总结、概览）  用于导出关于模型的精简信息的方法，可以使用tensorboard等工具访问这些信息
@@ -68,5 +73,6 @@ name_scope（命名空间）  类似namespace，包含/嵌套的关系，其含�
 ![tensorBoard解释](/img/tensorboard.png)
 
 ##### 2、用rensorBoard读取并展示日志
+
 
 tensorboard --logdir=日志所在地址
