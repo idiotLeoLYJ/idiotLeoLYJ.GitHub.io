@@ -70,5 +70,3 @@ name_scope（命名空间）  类似namespace，包含/嵌套的关系，其含�
 ##### 2、用rensorBoard读取并展示日志
 
 tensorboard --logdir=日志所在地址
-
-##### 
