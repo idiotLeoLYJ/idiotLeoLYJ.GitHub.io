@@ -89,10 +89,8 @@ Matrix Plot Library   一个及其强大的绘图库
 
 ```
 # -*- coding:UTF-8 -*-
-
-```
 用梯度下降的优化方法来快速解决线性回归问题
-```
+
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
