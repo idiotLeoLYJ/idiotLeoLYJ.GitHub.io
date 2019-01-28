@@ -249,4 +249,71 @@ conv1 = tf.layers.conv2d(
 	padding='same'          # same表示输出的大小不变，也就是说要在外围补零两圈
 	activation=tf.nn.relu   # 激活函数是relu
 	)
+# 第一层池化（亚采样），输出形状为[14, 14,32]
+pool1 = tf.layers.max_pooling2d(
+	inputs=conv1,           # 形状 [28*28*32]
+	pool_size=[2, 2],       # 过滤器在二维的大小是（2 * 2）
+	trides=2                # 步长是2
+	)
+	
+# 第二层卷积，输出形状为[14*14*64]
+conv2 = tf.layers.conv2d(
+	inputs=pool1,           # 形状28*28*32
+	filters=64,             # 64个过滤器（卷积核），输出的深度是64
+	kernel_size=[5, 5],     # 过滤器在二维的大小是（5*5）
+	strides=1,              # 不长是1
+	padding='same'          # same表示输出的大小不变，也就是说要在外围补零两圈
+	activation=tf.nn.relu   # 激活函数是relu
+	)
+# 第二层池化（亚采样），输出形状为[7, 7, 64]
+pool1 = tf.layers.max_pooling2d(
+	inputs=conv2,           # 形状 [14*14*64]
+	pool_size=[2, 2],       # 过滤器在二维的大小是（2 * 2）
+	trides=2                # 步长是2
+	)
+	
+# 平坦化（flat）
+flat = tf.reshape(pool2, [-1, 7, 7, 64]) # -1表示他根据确定的参数推断这个维度的大小,形状[7*7*64]
+
+# 1024个神经元的全连接层
+dense = tf.layers.dense(inputs=flat, units=1024, activation=tf.nn.relu)
+
+# Dropout：丢弃50%,rate=0.5
+dropout = tf.layers.dropout(inputs=dense, rate=0.5)
+
+# 10个神经元的全连接层，这里不用激活函数来做非线性化了
+logits = tf.layers.dense(inputs=dropout, units=10)  # 输出。形状[1, 1, 10]
+
+# 计算误差（计算cross entropy（交叉熵），再用Softmax计算百分比概率）
+# Softmax特点：输入几个，输出几个，总和为1
+loss = tf.losses.softmax_cross_entropy(onehot_labels=output_y, logits=logits)
+
+# 用Adam优化器来最小化误差loss，学习率0.001
+train_op = tf.train.AdamOptimizer(learning_rate=0.001).minimize(loss)
+
+# 精度。计算 预测值 和 实际标签 的匹配程度
+# 返回(accuracy, update_op),会创建两个局部变量
+accuracy = tf.metrics.accuracy(
+	labels=tf.argmax(output_y, axis=1),
+	prediction=tf.argmax(logits, axis=1， )[1]
+	)
+	
+# 创建会话
+sess = tf.Session()
+# 初始化变量：全局和局部
+init = tf.group(tf.global_variable_initializer(), tf.local_variables_initializer())
+sess.run(init)
+
+for i in range(20000):
+	batch = mnist.train,next_batch(50)  # 从头Train数据集里取下一个50个样本
+	train_loss, train_op = sess.run([loss, train_op], {input_x: batch[0], output_y: batch[1]})
+	if i % 100 == 0:
+		test_accuracy = sess.run(accuracy, {input_x: test_x, output_y: test_y})
+		print("Step=%d, Train loss=%.4f, [Test_accuracy=%.2f]") % (i, train_loss, test_accuracy)
+
+# 测试：打印20个预测值和真实值的对
+test_output = sess.run(logits, {imput_x: text_x[:20]})
+inferneced_y = np.argmax(test_output, 1)
+print(inferenced_y, 'Inferenced numbers') # 推测的数字
+print(np.argmax(test_y[:20], 1)), 'Real numbers')  # 真实的数字
 ```
