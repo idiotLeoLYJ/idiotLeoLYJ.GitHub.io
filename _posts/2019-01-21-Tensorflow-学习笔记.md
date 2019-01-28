@@ -212,4 +212,4 @@ sess.close()
 
 MNIST：手写数据数据集
 
-![mnist的网络结构](/img/mnist网络.png)
+![mnist的网络结构](https://s2.ax1x.com/2019/01/28/kKOScn.png)
