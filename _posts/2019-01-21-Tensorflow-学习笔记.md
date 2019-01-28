@@ -85,7 +85,9 @@ tensorboard --logdir=日志所在地址
 
 Matrix Plot Library   一个及其强大的绘图库
 
-# 小练习：梯度下降解决线性回归
+# 动手实现神经网络
+
+##### 小练习：梯度下降解决线性回归
 
 ```
 # -*- coding:UTF-8 -*-
@@ -154,7 +156,7 @@ plt.show()
 sess.close()
 ```
 
-# 激活函数
+##### 激活函数
 
 作用：加入非线性。主要为tf.nn中activate function,tf.nn.relu(sofmax)等等。
 
@@ -208,7 +210,7 @@ plt.legend(loc="best")
 sess.close()
 ```
 
-# 动手实现CNN卷积神经网络
+##### 动手实现CNN卷积神经网络
 
 MNIST：手写数据数据集
 
