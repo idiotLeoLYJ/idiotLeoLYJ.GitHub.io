@@ -59,7 +59,7 @@ Tensorflow程序流程：1、定义**计算图**结构；2、使用**会话**执
 
 两种方法创建和关闭Session：一种直接建立sess，第二种用with tf.Session() as sess:(第二种方法不需要像第一种一样需要显式的关闭sess.close()这样)
 
-# 可视化利器 TensorBoard
+# 可视化利器 TensorBoard及扩展工具
 
 ##### 1、用tensorflow保存图的信息到日志中
 
@@ -77,11 +77,11 @@ name_scope（命名空间）  类似namespace，包含/嵌套的关系，其含�
 
 tensorboard --logdir=日志所在地址
 
-# PlayGround
+##### PlayGround
 
 由js编写的网页应用，可以通过浏览器训练网络
 
-# 常用python库 Matplotlib
+##### 常用python库 Matplotlib
 
 Matrix Plot Library   一个及其强大的绘图库
 
