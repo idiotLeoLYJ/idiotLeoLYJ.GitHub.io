@@ -153,3 +153,57 @@ plt.show()
 # 关闭会话
 sess.close()
 ```
+
+# 激活函数
+
+作用：加入非线性。主要为tf.nn中activate function,tf.nn.relu(sofmax)等等。
+
+```
+# 激活函数的原始实现
+import numpy as np
+import matploitlib.pylot as plt
+import tensorflow as tf
+
+# 创建输入数据
+x = np.linspace(-7, 7, 180) #（-7，7）之间的的等间隔180个点
+
+# 激活函数的实现
+def sigmoid(imputs):
+	y = [1 / float(1 + np.exp(-x))for x in inputs]
+	return y
+
+def relu(inputs):
+	y = [x * (x > 0) for x in inputs]
+	return y
+
+def tanh(inputs):
+	y = [(np.exp(x) - np.exp(-x)) / float(np.exp(x) + np.exp(-x)) for x in inputs]
+	return y
+
+def softplus(inputs):
+	y = [np.log(1 + np.exp(x)) for x in inputs]
+	return y
+	
+# 经过tensorflow的激活函数处理的各个y值
+y_sigmoid = tf.nn.sigmoid(x)
+y_relu = tf.nn.relu(x)
+y_tanh = tf.nn.tanh(x)
+
+# 显示图像
+plt.show()
+
+# 创建会话
+sess = tf.Session()
+
+# 运行
+y_sigmoid, y_relu, y_tanh = sess.run([y_sigmoid, y_relu, y_tanh])
+
+# 创建各个激活函数的图像
+plt.subplot(221)
+plt.plot(x, y_sigmoid, c="red", label="Sigmoid")
+plt.ylim(-0.2, 1.2)  # y的取值区间
+plt.legend(loc="best")
+
+# 关闭会话
+sess.close()
+```
