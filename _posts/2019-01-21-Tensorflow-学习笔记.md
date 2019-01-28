@@ -207,3 +207,9 @@ plt.legend(loc="best")
 # 关闭会话
 sess.close()
 ```
+
+# 动手实现CNN卷积神经网络
+
+MNIST：手写数据数据集
+
+![mnist的网络结构](/img/mnist网络.png)
