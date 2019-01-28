@@ -214,3 +214,39 @@ MNIST：手写数据数据集
 
 实现mnist的网络结构为：
 ![mnist的网络结构](https://s2.ax1x.com/2019/01/28/kKOScn.png)
+
+```
+import numpy as np
+import tensorflow as tf
+
+# 下载并载入mnist手写数字库（55000张 * 28 * 28）
+from tessorflow.examples.tutorials.mnist import input_data
+mnist = input_data.read_data_sets('mnist_data', one_hot=True)
+
+# one_hot ：独热码的编码（encoding）形式
+# 0, 1, 2, 3, 4, 5, 6, 7, 8 9 的十位数字
+# 0： 1000000000
+# 1： 0100000000
+# 2： 0010000000
+# 以此类推
+
+# None表示张量（Tensor）的第一个维度可以是任何长度
+input_x = tf.placeholder(tf.float32, [None, 28 * 28]) / 255
+output_y = tf.placeholder(tf.int32, [None, 10])
+input_x_images = tf.reshape(input_x, [-1, 28, 28, 1])
+
+# 从 Test 数据集里选区3000个手写数字的图片和对应标签
+test_x = mnist.test.images[:3000] # 图片
+test_y = mnist.test.labels[:3000] # 标签
+
+# 构建卷积神经网络
+# 第一层卷积，输出形状为[28*28*32]
+conv1 = tf.layers.conv2d(
+	inputs=input_x_images,  # 形状28*28*1
+	filters=32,             # 32个过滤器（卷积核），输出的深度是32
+	kernel_size=[5, 5],     # 过滤器在二维的大小是（5*5）
+	strides=1,              # 不长是1
+	padding='same'          # same表示输出的大小不变，也就是说要在外围补零两圈
+	activation=tf.nn.relu   # 激活函数是relu
+	)
+```
