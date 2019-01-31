@@ -319,3 +319,49 @@ inferneced_y = np.argmax(test_output, 1)
 print(inferenced_y, 'Inferenced numbers') # 推测的数字
 print(np.argmax(test_y[:20], 1)), 'Real numbers')  # 真实的数字
 ```
+
+##### 动手实现RNN-LSTM循环神经网络
+
+CNN灵感:人类**视觉**皮层对外界事物的感知。RNN：人类的**记忆**机制。
+
+RNN的优势：1、RNN的每一个输出与前面的输出建立起关联；2、能够很好处理序列化的数据（如音乐、文章等）；3、能够以前面的序列化对象为基础，来“生成”新的序列化对象。
+
+RNN的局限性：步数增多导致 梯度爆炸/消失。
+
+**梯度消失/爆炸：**0.9^100 = 0.00002656139（梯度消失）   1.1^100 = 13780.36(梯度爆炸)
+
+**梯度爆炸解决：Gradient Clipping（梯度裁剪）：**![](https://i.loli.net/2019/01/31/5c5259a3477dc.png)
+
+梯度消失类似于 记忆消散
+
+**LSTM(Long Short-Term Memory)** ：一种特殊的RNN。1997年首次提出.
+
+![传统RNN和LSTM]（https://i.loli.net/2019/01/31/5c525ae7d0b9c.png）
+![](https://i.loli.net/2019/01/31/5c525b4ba3e8c.png)
+
+在t时刻，LSTM的输入有3个：1、X<sub>t</sub>：当前时刻网络的输入；2、h<sub>t-1</sub>：前一时刻LSTM的输出；3、C<sub>t-1</sub>：前一时刻的单元状态。
+
+在t时刻，LSTM的输出有2个：1、h<sub>t</sub>：当前时刻LSTM的输出；2、C<sub>t</sub>：当前时刻的单元状态。
+
+LSTM的神经元的“三重门”机制![LSTM的神经元的“三重门”机制](https://i.loli.net/2019/01/31/5c525d07b8342.png)
+
+有一篇解读LSTM的文章，google，colah。
+
+LSTM“门机制就像水坝的阀门”：取值[0,1]。
+
+三重门重要性：遗忘门 > 输入门 > 输出门
+
+LSTM解决梯度消失的主要原理：1、对需要的记忆保持久一些；2、不需要的记忆选择遗忘。
+
+LSTM很多变体：比如GRU。
+
+**Word Embedding**
+
+One_hot编码模式：数据量很大时效率很低。  词向量编码模式数据量很大时效率高。
+
+词向量：类似Clustering（聚类）
+
+Word Embedding的学习资料：1、tensorflow官网里有Embeddings和Vector Representation of Words；2、知乎
+
+**接下来要搭建的网络模型：**
+![](https://i.loli.net/2019/01/31/5c52606e46add.png)
