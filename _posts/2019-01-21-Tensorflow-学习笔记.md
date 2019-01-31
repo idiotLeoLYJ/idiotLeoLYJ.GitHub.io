@@ -336,7 +336,7 @@ RNN的局限性：步数增多导致 梯度爆炸/消失。
 
 **LSTM(Long Short-Term Memory)** ：一种特殊的RNN。1997年首次提出.
 
-![传统RNN和LSTM]（https://i.loli.net/2019/01/31/5c525ae7d0b9c.png）
+![传统RNN和LSTM](https://i.loli.net/2019/01/31/5c5260adac3a7.png)
 ![](https://i.loli.net/2019/01/31/5c525b4ba3e8c.png)
 
 在t时刻，LSTM的输入有3个：1、X<sub>t</sub>：当前时刻网络的输入；2、h<sub>t-1</sub>：前一时刻LSTM的输出；3、C<sub>t-1</sub>：前一时刻的单元状态。
